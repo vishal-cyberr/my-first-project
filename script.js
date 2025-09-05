@@ -6,7 +6,7 @@ const attempts = [];
 let currentIndex = 0;
 let score = 0;
 // Load reward images dynamically (assumes images named 1.jpg, 2.jpg ... in root folder)
-const vikramImages = Array.from({ length: 52 }, (_, i) => `${i + 1}.jpg`);
+const PUZZLE_IMAGE = 'puzzle.jpg';
 
 // Puzzle constants
 const PUZZLE_SIZE = 3; // 3x3 grid
