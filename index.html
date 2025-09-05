@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aarush Math Challenge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🌈💖 Vickey’s Magical Math Challenge 💖🌈</h1>
+    <p>✨ Learn, Play & Shine Bright! ✨</p>
+    <div id="score">🏆 Score: 0</div>
+  </header>
+
+  <main>
+    <!-- User Name Input Section -->
+    <section id="userNameSection">
+      <label for="userNameInput">Enter Your Name:</label><br />
+      <input id="userNameInput" type="text" placeholder="Your name here" required />
+      <button id="startQuizBtn">Start Quiz</button>
+    </section>
+
+    <!-- Quiz Section (hidden initially) -->
+    <section id="quiz" style="display:none;">
+      <div id="welcomeUser"></div>
+      <div id="questionBox"></div>
+      <input type="text" id="answerInput" placeholder="Type your answer here 💡" />
+      <button id="checkBtn">💚 Check Answer</button>
+      <div id="feedback"></div>
+    </section>
+
+    <!-- Navigation Controls (hidden initially) -->
+    <section id="controls" style="display:none;">
+      <button id="prevBtn">⬅ 🌟 Previous</button>
+      <button id="nextBtn">Next 🌟 ➡</button>
+    </section>
+
+    <!-- Gallery Section (hidden initially) -->
+    <section id="gallerySection" style="display:none;">
+      <h2>🏆 Your Reward Gallery</h2>
+      <div id="galleryImages"></div>
+      <button onclick="toggleSection('gallerySection')">Close Gallery</button>
+    </section>
+
+    <!-- Library Section (hidden initially) -->
+    <section id="librarySection" style="display:none;">
+      <h2>📚 Math Library</h2>
+      <p>Learn cool math tricks and fun facts!</p>
+      <ul>
+        <li>Why zero is unique in math?</li>
+        <li>Fun with prime numbers</li>
+        <li>Simple multiplication shortcuts</li>
+      </ul>
+      <button onclick="toggleSection('librarySection')">Close Library</button>
+    </section>
+
+    <!-- Mini Game Section (hidden initially) -->
+    <section id="miniGameSection" style="display:none;">
+      <h2>🎮 Quick Math Game</h2>
+      <p>Solve as many sums as you can in 30 seconds!</p>
+      <button id="startGameBtn">Start Game</button>
+      <div id="gameArea" style="margin-top:10px;"></div>
+      <button onclick="toggleSection('miniGameSection')">Close Game</button>
+    </section>
+
+    <!-- Navigation Buttons to open sections -->
+    <div class="extraButtons">
+      <button onclick="toggleSection('librarySection')">Open Library</button>
+      <button onclick="toggleSection('gallerySection'); loadGallery();">Open Gallery</button>
+      <button onclick="toggleSection('miniGameSection')">Play Mini Game</button>
+    </div>
+
+    <!-- Reward Image (now puzzle slices container inside) -->
+    <div id="imageBox"></div>
+
+    <!-- Fireworks Canvas -->
+    <canvas
+      id="fireworks"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+      "
+    ></canvas>
+  </main>
+
+  <footer>
+    <p>🌸 Made with 💕 & happiness by <strong>Aarush</strong> 🌸</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
