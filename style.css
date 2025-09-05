@@ -10,7 +10,7 @@ body {
 
 /* Floating Emoji Background */
 body::before {
-  content: "✨ 🚀 🌈 🎉 🪐 ⭐";
+  content: "✨ 🚀 🌈 🎉 🪐 ⭐ 🐝 🐞 🦋";
   position: fixed;
   top: 0;
   left: 0;
@@ -21,20 +21,29 @@ body::before {
   animation: floatEmojis 20s linear infinite;
   pointer-events: none;
   white-space: nowrap;
+  z-index: -1;
+}
+
+/* Nature Ground Layer */
+body::after {
+  content: "🌿🌱🌾🍀🌻🌼🌷🌸🌹";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  animation: swayGrass 6s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0.3;
+  z-index: -1;
 }
 
 /* Title & Score */
 header h1 {
   font-size: 2.8rem;
   font-weight: bold;
-  background: linear-gradient(
-    90deg,
-    #ff0080,
-    #ff8c00,
-    #40e0d0,
-    #8a2be2,
-    #ff0080
-  );
+  background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #8a2be2, #ff0080);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 400% 400%;
@@ -70,6 +79,7 @@ header h1 {
   animation: levitate 3s ease-in-out infinite;
 }
 
+/* Username Input */
 #userNameSection input {
   padding: 12px;
   font-size: 18px;
@@ -94,7 +104,7 @@ header h1 {
   color: #444;
 }
 
-/* Input */
+/* Answer Input */
 #answerInput {
   padding: 12px;
   font-size: 18px;
@@ -172,7 +182,7 @@ button:hover {
   opacity: 1;
 }
 
-/* Gallery images */
+/* Gallery Images */
 #galleryImages img {
   width: 100px;
   margin: 5px;
@@ -196,9 +206,20 @@ button:hover {
   z-index: 9999;
 }
 
-/* Extra Buttons container */
+/* Extra Buttons Container */
 .extraButtons {
   margin: 15px;
+}
+
+/* Nature Banner */
+.natureBanner {
+  font-size: 1.8rem;
+  margin: 20px auto;
+  padding: 10px;
+  background: linear-gradient(to right, #d4fc79, #96e6a1);
+  border-radius: 15px;
+  box-shadow: 0 0 12px rgba(0, 128, 0, 0.3);
+  animation: bounceIn 1s ease;
 }
 
 /* Animations */
@@ -240,8 +261,7 @@ button:hover {
 }
 
 @keyframes levitate {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
@@ -282,23 +302,11 @@ button:hover {
   }
 }
 
-/* Responsive */
-@media (max-width: 500px) {
-  body {
-    padding: 15px;
-  }
-  #quiz,
-  #userNameSection,
-  #librarySection,
-  #gallerySection,
-  #miniGameSection {
-    max-width: 100%;
-  }
-  button {
-    font-size: 14px;
-    padding: 10px 15px;
-  }
-  #imageBox img {
-    max-width: 95%;
-  }
+@keyframes swayGrass {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
 }
+
+/* Responsive */
+@media (max-width:
