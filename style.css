@@ -1,0 +1,304 @@
+/* General Styling */
+body {
+  font-family: 'Comic Sans MS', Arial, sans-serif;
+  background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+  text-align: center;
+  padding: 30px;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Floating Emoji Background */
+body::before {
+  content: "✨ 🚀 🌈 🎉 🪐 ⭐";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  opacity: 0.1;
+  animation: floatEmojis 20s linear infinite;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Title & Score */
+header h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    #ff0080,
+    #ff8c00,
+    #40e0d0,
+    #8a2be2,
+    #ff0080
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  animation: rainbow 6s linear infinite;
+  margin-bottom: 10px;
+}
+
+#score {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+  background: #fff5c3;
+  padding: 8px 15px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Quiz Box */
+#quiz,
+#userNameSection,
+#librarySection,
+#gallerySection,
+#miniGameSection {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  max-width: 500px;
+  margin: 20px auto;
+  font-family: 'Comic Sans MS', Arial, sans-serif;
+  animation: levitate 3s ease-in-out infinite;
+}
+
+#userNameSection input {
+  padding: 12px;
+  font-size: 18px;
+  width: 60%;
+  text-align: center;
+  border: 3px solid #ff9800;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: 0.3s;
+}
+
+#userNameSection input:focus {
+  outline: none;
+  border-color: #ff5722;
+  box-shadow: 0 0 8px #ff5722;
+}
+
+/* Question Box */
+#questionBox {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* Input */
+#answerInput {
+  padding: 12px;
+  font-size: 18px;
+  width: 130px;
+  text-align: center;
+  border: 3px solid #ff9800;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: 0.3s;
+}
+
+#answerInput:focus {
+  outline: none;
+  border-color: #ff5722;
+  box-shadow: 0 0 8px #ff5722;
+}
+
+/* Buttons */
+button {
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px #6a11cb, 0 0 24px #2575fc;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: scale(1.12) rotate(-2deg);
+  box-shadow: 0 0 16px #2575fc, 0 0 32px #6a11cb;
+}
+
+/* Feedback */
+#feedback {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 12px;
+  min-height: 28px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Puzzle Container */
+#puzzleContainer {
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3px;
+  border: 2px solid #6a11cb;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+.puzzlePiece {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
+  box-shadow: 0 0 8px #2575fc;
+  border-radius: 8px;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+.puzzlePiece.visible {
+  opacity: 1;
+}
+
+/* Gallery images */
+#galleryImages img {
+  width: 100px;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #6a11cb;
+  transition: transform 0.3s;
+}
+
+#galleryImages img:hover {
+  transform: scale(1.1);
+}
+
+/* Fireworks Canvas */
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Extra Buttons container */
+.extraButtons {
+  margin: 15px;
+}
+
+/* Animations */
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes levitate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 12px #ff00ff, 0 0 24px #00ffe0;
+  }
+  to {
+    box-shadow: 0 0 24px #00ffe0, 0 0 48px #ff00ff;
+  }
+}
+
+@keyframes floatEmojis {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  body {
+    padding: 15px;
+  }
+  #quiz,
+  #userNameSection,
+  #librarySection,
+  #gallerySection,
+  #miniGameSection {
+    max-width: 100%;
+  }
+  button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  #imageBox img {
+    max-width: 95%;
+  }
+}
